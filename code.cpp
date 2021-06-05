@@ -1,0 +1,419 @@
+#include<stdio.h>
+main()
+{
+	char a[3][3];
+	char h1,h2;
+	int pos1,pos2,r=0,k=0,i,j,count,p,q;
+	printf("enter %c or %c for player1\n",'x','0');
+	scanf("%c",&h1);
+	printf("player2 got %c\n",h1=='x'?'0':'x');
+	h2=(h1=='x'?'0':'x');
+	int t=48;
+	printf("this type of game\n");
+		printf("\n");
+	for(p=0;p<=2;p++)
+	{
+		for(q=0;q<=2;q++)
+		{
+			printf("pos%c ",t);
+			t++;
+		}
+		printf("\n");
+	}
+	printf("\n");
+	while(r !=1)
+	{
+	printf("enter the pos for player1\n");
+	scanf("%d",&pos1);
+	pos1==0?(i=0,j=0):k++,pos1==1?(i=0,j=1):k++,pos1==2?(i=0,j=2):k++,pos1==3?(i=1,j=0):k++,pos1==4?(i=1,j=1):k++,pos1==5?(i=1,j=2):k++,
+pos1==6?(i=2,j=0):k++,pos1==7?(i=2,j=1):k++,pos1==8?(i=2,j=2):k++;
+a[i][j]=h1;
+printf("\n");
+for(p=0;p<=2;p++)
+{
+	for(q=0;q<=2;q++)
+		printf("%c ",a[p][q]);
+	printf("\n");
+}
+count=0;
+if(pos1==4)
+{
+	p=i;
+for(q=0;q<=2;q++)
+{
+	if(a[p][q]==h1)
+	count++;
+	else
+	q=3;
+}
+if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+ break;
+}
+else
+count=0;
+p=j;
+for(q=0;q<=2;q++)
+{
+	if(a[p][q]==h1)
+	count++;
+	else
+	q=3;
+}
+if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+p=0;
+for(q=0;q<=2;q++)
+{
+	if(a[p][q]==h1)
+	count++;
+	else
+	q=3;
+	p++;
+}
+if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+p=0;
+for(q=2;q>=0;q--)
+{
+	if(a[p][q]==h1)
+	count++;
+	else
+	q=-1;
+	p++;
+}
+if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+}
+if(pos1==0||pos1==2||pos1==6||pos1==8)
+{
+	p=i;
+	for(q=0;q<=2;q++)
+	{
+		if(a[p][q]==h1)
+		{
+			count++;
+	}
+		else
+		q=3;
+	}
+	if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+	q=j;
+	for(p=0;p<=2;p++)
+	{
+		if(a[p][q]==h1)
+		{
+			count++;
+	}
+		else
+		p=3;
+	}
+	if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+	p=0;
+	for(q=0;q<=2;q++)
+	{
+		if(a[p][q]==h1)
+		{
+			count++;
+	}
+		else
+		q=3;
+		p++;
+	}
+	printf("%d",count);	
+if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+	}
+	if(pos1 !=0||pos1 !=2||pos1 !=6||pos1 !=8||pos1 !=4)
+	{
+		p=i;
+		for(q=0;q<=2;q++)
+		{
+			if(a[p][q]==h1)
+			{
+				count++;
+	}
+		else
+		q=3;
+		}
+		if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+		q=j;
+		for(p=0;p<=2;p++)
+		{
+			if(a[p][q]==h1)
+			{
+				count++;
+	}
+		else
+		p=3;
+		}
+		if(count==3)
+{
+	r=1;
+	printf("player1 wins");
+break;
+}
+else
+count=0;
+	}
+	count=0;
+		for(p=0;p<=2;p++)
+		{
+			for(q=0;q<=2;q++)
+			{
+				if(a[p][q]=='x'||a[p][q]=='0')
+				count++;
+			}
+		}
+		if(count==9)
+		{
+			printf("match draw");
+		break;
+	}
+		count=0;
+	printf("enter the pos for player2\n");
+	scanf("%d",&pos2);
+	pos2==0?(i=0,j=0):k++,pos2==1?(i=0,j=1):k++,pos2==2?(i=0,j=2):k++,pos2==3?(i=1,j=0):k++,pos2==4?(i=1,j=1):k++,pos2==5?(i=1,j=2):k++,
+pos2==6?(i=2,j=0):k++,pos2==7?(i=2,j=1):k++,pos2==8?(i=2,j=2):k++;
+a[i][j]=h2;
+printf("\n");
+for(p=0;p<=2;p++)
+{
+	for(q=0;q<=2;q++)
+	{
+		printf("%c ",a[p][q]);
+	}
+	printf("\n");
+}
+
+if(pos2==4)
+{
+	p=i;
+for(q=0;q<=2;q++)
+{
+	if(a[p][q]==h2)
+	count++;
+	else
+	q=3;
+}
+if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+p=j;
+for(q=0;q<=2;q++)
+{
+	if(a[p][q]==h2)
+	count++;
+	else
+	q=3;
+}
+if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+p=0;
+for(q=0;q<=2;q++)
+{
+	if(a[p][q]==h2)
+	count++;
+	else
+	q=3;
+	p++;
+}
+if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+p=0;
+for(q=2;q>=0;q--)
+{
+	if(a[p][q]==h2)
+	count++;
+	else
+	q=-1;
+	p++;
+}
+if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+}
+if(pos2==0||pos2==2||pos2==6||pos2==8)
+{
+	p=i;
+	for(q=0;q<=2;q++)
+	{
+		if(a[p][q]==h2)
+		{
+			count++;
+	}
+		else
+		q=3;
+	}
+	if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+	q=j;
+	for(p=0;p<=2;p++)
+	{
+		if(a[p][q]==h2)
+		{
+			count++;
+	}
+		else
+		p=3;
+	}
+	if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+	p=0;
+	for(q=0;q<=2;q++)
+	{
+		if(a[p][q]==h2)
+		{
+			count++;
+		continue;
+	}
+		else
+		q=3;
+		p++;
+	}	
+if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+	}
+	if(pos1 !=0||pos1 !=2||pos1 !=6||pos1 !=8||pos1 !=4)
+	{
+		p=i;
+		for(q=0;q<=2;q++)
+		{
+			if(a[p][q]==h2)
+			{
+				count++;
+	}
+		else
+		q=3;
+		}
+		if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+		q=j;
+		for(p=0;p<=2;p++)
+		{
+			if(a[p][q]==h2)
+			{
+				count++;
+	}
+		else
+		p=3;
+		}
+		if(count==3)
+{
+	r=1;
+	printf("player2 wins");
+break;
+}
+else
+count=0;
+	}
+	count=0;
+		for(p=0;p<=2;p++)
+		{
+			for(q=0;q<=2;q++)
+			{
+				if(a[p][q]=='x'||a[p][q]=='0')
+				count++;
+			}
+		}
+		if(count==9)
+		{
+			printf("draw match");
+		break;
+	}
+		count=0;
+}
+}
